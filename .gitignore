@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Misc
+.DS_Store
+.fleet
+.idea
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -79,7 +84,11 @@ web_modules/
 out
 
 # Nuxt.js build / generate output
+.output
+.data
 .nuxt
+.nitro
+.cache
 dist
 
 # Gatsby files

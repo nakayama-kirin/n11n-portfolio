@@ -3,15 +3,20 @@
     <Header />
 
     <v-main>
+      <div class="hero">
+        <div class="hero-content">
+          <v-row justify="center" align="center" class="text-center mb-12">
+            <v-col cols="12" lg="8">
+              <h1 class="text-h2 mb-4 font-playwrite">Portfolio</h1>
+            </v-col>
+          </v-row>
+        </div>
+        <div class="hero-bg">
+          <GeometricAnimation :ratio="[16, 10]" />
+        </div>
+      </div>
+
       <v-container class="py-12">
-        <v-row justify="center" align="center" class="text-center mb-12">
-          <v-col cols="12" lg="8">
-            <h1 class="text-h2 mb-4">ポートフォリオへようこそ</h1>
-            <p class="text-body1">
-              あなたの作品とスキルを紹介するシンプルなポートフォリオです。
-            </p>
-          </v-col>
-        </v-row>
 
         <v-row justify="center" align="stretch" class="gap-6">
           <v-col cols="12" md="4">
@@ -50,8 +55,26 @@
 // auto imported components are used directly
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .text-center {
   text-align: center;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    margin: auto;
+  }
+  
+  &-bg {
+    position: relative;
+    z-index: 0;
+    opacity: 0.7;
+  }
 }
 </style>

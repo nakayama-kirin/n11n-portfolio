@@ -45,7 +45,10 @@ import { computed, onMounted, ref, watch } from "vue"
 import { gsap } from "gsap"
 import { geometricProps } from "./geoProps"
 
-const props = defineProps(geometricProps)
+const props = defineProps({
+  ...geometricProps,
+  delay: { type: Number, default: 0 }
+})
 const mainRect = ref<SVGRectElement | null>(null)
 const subRect = ref<SVGRectElement | null>(null)
 
@@ -96,6 +99,10 @@ const runAnimation = () => {
         y: 0,
         duration: props.duration,
         ease: props.easing,
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 2,
+        delay: props.delay
       })
       break
     case 2:
@@ -104,7 +111,12 @@ const runAnimation = () => {
         transformBox: "fill-box",
       })
       gsap.set(mainTarget, { scale: 1 })
-      gsap.timeline()
+      gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 2,
+        delay: props.delay
+      })
         .set(subTarget, { scale: 0 })
         .to(
           subTarget,
@@ -127,6 +139,10 @@ const runAnimation = () => {
         scale: 1,
         duration: props.duration,
         ease: props.easing,
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 2,
+        delay: props.delay
       })
       break
   }

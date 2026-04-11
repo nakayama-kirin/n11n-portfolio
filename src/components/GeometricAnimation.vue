@@ -10,6 +10,7 @@
         :triangle-type="item.triangleType"
         :animationId="item.animationId"
         :reverse="item.reverse"
+        :delay="item.delay"
       />
     </div>
   </div>
@@ -95,6 +96,7 @@ const gridItems = computed(() => {
       shapeDirection: randomChoice(directions),
       triangleType: component === GeometricSvgTriangle ? randomChoice(triangleTypes) : undefined,
       reverse: randomBoolean(),
+      delay: (index % 6) * 0.3, // 6つのグループに分けて0.3秒ずつずらす
     }
   })
 })

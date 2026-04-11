@@ -40,7 +40,10 @@ import { computed, onMounted, ref, watch } from "vue"
 import { gsap } from "gsap"
 import { geometricProps } from "./geoProps"
 
-const props = defineProps(geometricProps)
+const props = defineProps({
+  ...geometricProps,
+  delay: { type: Number, default: 0 }
+})
 const mainCircle = ref<SVGCircleElement | null>(null)
 const subCircle = ref<SVGCircleElement | null>(null)
 
@@ -61,7 +64,12 @@ const runAnimation = () => {
 
   switch (props.animationId) {
     case 2:
-      gsap.timeline()
+      gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 2,
+        delay: props.delay
+      })
         .set(mainTarget, { scale: 1 })
         .set(subTarget, { scale: 0 })
         .to(mainTarget, {
@@ -89,6 +97,10 @@ const runAnimation = () => {
           scale: 1,
           duration: props.duration,
           ease: props.easing,
+          repeat: -1,
+          yoyo: true,
+          repeatDelay: 2,
+          delay: props.delay
         }
       )
       break

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="ma-4" max-width="400">
+  <!-- <v-card class="ma-4" max-width="400">
     <v-img
       :src="image"
       height="200"
@@ -16,7 +16,7 @@
         詳細を見る
       </v-btn>
     </v-card-actions>
-  </v-card>
+  </v-card> -->
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <div class="l-container">
     <slot />
-  </v-app>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,7 +18,7 @@ useHead({
 })
 </script>
 
-<style>
+<style lang="scss">
 .font-playwrite {
   font-family: "Playwrite IE", cursive;
   font-optical-sizing: auto;

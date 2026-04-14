@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
   components: true,
+  css: [
+    '~/assets/styles/reset.css',
+  ],
   vite: {
     css: {
       preprocessorOptions: {

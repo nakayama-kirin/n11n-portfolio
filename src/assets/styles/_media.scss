@@ -1,0 +1,30 @@
+@charset "utf-8";
+@use "sass:map";
+
+$media-sp: (min:  375px, max:  767px);
+$media-tb: (min:  768px, max: 1023px);
+$media-pc: (min: 1024px, max: 1440px);
+
+@mixin media($device: "l") {
+  @if $device == "s" {
+    @media (max-width: map.get($media-sp, max)) {
+      @content;
+    }
+  } @else if $device == "sm" {
+    @media (max-width: map.get($media-tb, max)) {
+      @content;
+    }
+  } @else if $device == "m" {
+    @media (min-width: map.get($media-tb, min)) and (max-width: map.get($media-tb, max)) {
+      @content;
+    }
+  } @else if $device == "ml" {
+    @media (min-width: map.get($media-tb, min)) {
+      @content;
+    }
+  } @else { // $device == "l"
+    @media (min-width: map.get($media-pc, min)) {
+      @content;
+    }
+  }
+}

@@ -11,7 +11,10 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "~/assets/styles/import.scss" as *;'
+          additionalData: `
+            @use "sass:map";
+            @use "~/assets/styles/import.scss" as *;
+          `
         }
       }
     },

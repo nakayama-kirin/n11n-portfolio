@@ -19,11 +19,11 @@
 <script setup lang="ts">
 import { computed, ref } from "vue"
 import type { PropType } from "vue"
-import { geometricProps } from "./Geometric/geoProps"
-import GeometricSvgCircle from "./Geometric/SvgCircle.vue"
-import GeometricSvgCircular from "./Geometric/SvgCircular.vue"
-import GeometricSvgTriangle from "./Geometric/SvgTriangle.vue"
-import GeometricSvgSquare from "./Geometric/SvgSquare.vue"
+import { geometricProps } from "./geoProps"
+import GeometricSvgCircle from "./SvgCircle.vue"
+import GeometricSvgCircular from "./SvgCircular.vue"
+import GeometricSvgTriangle from "./SvgTriangle.vue"
+import GeometricSvgSquare from "./SvgSquare.vue"
 
 const props = defineProps({
   ...geometricProps,

@@ -137,7 +137,6 @@ const colorVars = computed(() => ({
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
   gap: 0;
   justify-items: center;
   margin: auto;

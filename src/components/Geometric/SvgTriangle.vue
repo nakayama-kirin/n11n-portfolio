@@ -1,5 +1,5 @@
 <template>
-  <svg class="geo" :viewBox="`0 0 ${size} ${size}`">
+  <svg class="geo" :viewBox="`0 0 ${size} ${size}`" :data-direction="shapeDirection" :data-id="animationId">
     <template v-if="!reverse">
       <polygon
         ref="mainPolygon"
@@ -41,6 +41,31 @@ const subPolygon = ref<SVGPolygonElement | null>(null)
 
 const size = computed(() => props.size)
 const reverse = computed(() => props.reverse)
+const origin = computed(() => {
+  if (props.triangleType === 'right') {
+    switch (props.shapeDirection) {
+      case 'up':
+        return '0% 0%'
+      case 'right':
+        return '100% 0%'
+      case 'down':
+        return '100% 100%'
+      default: // left
+        return '0% 100%'
+    }
+  } else {
+    switch (props.shapeDirection) {
+      case 'up':
+        return '50% 0%'
+      case 'right':
+        return '100% 50%'
+      case 'down':
+        return '50% 100%'
+      default: // left
+        return '0% 50%'
+    }
+  }
+})
 
 const runAnimation = () => {
   if (!mainPolygon.value || !subPolygon.value) return
@@ -48,12 +73,13 @@ const runAnimation = () => {
   const subTarget = reverse.value ? mainPolygon.value : subPolygon.value
   gsap.killTweensOf([mainPolygon.value, subPolygon.value])
   gsap.set([mainPolygon.value, subPolygon.value], {
-    transformOrigin: "0 100%",
+    transformOrigin: origin.value,
     transformBox: "fill-box",
   })
 
   switch (props.animationId) {
     case 2:
+    case 4:
       gsap.timeline({
         repeat: -1,
         yoyo: true,
@@ -103,27 +129,27 @@ const trianglePoints = computed(() => {
 
   if (props.triangleType === 'right') {
     switch (direction) {
-      case 'down':
-        return `${s},${s} 0,${s} ${s},0`
-      case 'left':
-        return `0,${s} 0,0 ${s},${s}`
+      case 'up':
+        return `0,0 ${s},0 0,${s}`
       case 'right':
         return `${s},0 ${s},${s} 0,0`
+      case 'down':
+        return `${s},${s} 0,${s} ${s},0`
       default:
-        return `0,0 ${s},0 0,${s}`
+        return `0,${s} 0,0 ${s},${s}`
     }
   }
 
   const h = (Math.sqrt(3) / 2) * s
   switch (direction) {
-    case 'down':
-      return `0,0 ${s},0 ${s / 2},${h}`
-    case 'left':
-      return `${s},0 ${s},${s} ${s - h},${s / 2}`
+    case 'up':
+      return `0,${s} ${s},${s} ${s / 2},${s - h}`
     case 'right':
       return `0,0 0,${s} ${h},${s / 2}`
-    default:
-      return `0,${s} ${s},${s} ${s / 2},${s - h}`
+    case 'down':
+      return `0,0 ${s},0 ${s / 2},${h}`
+    default: // left
+      return `${s},0 ${s},${s} ${s - h},${s / 2}`
   }
 })
 

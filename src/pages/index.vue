@@ -1,9 +1,7 @@
 <template>
-  <main role="main">
-    <div class="l-main">
-      <Hero />
-    </div>
-  </main>
+  <Main>
+    <Hero />
+  </Main>
 
   <Footer />
 </template>

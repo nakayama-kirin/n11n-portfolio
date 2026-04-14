@@ -28,9 +28,12 @@ html {
 
 .l-container {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   width: 100%;
+  height: 100%;
   min-height: 100vh;
   font-size: 1.6rem;
   color: map.get($font-color, light);

@@ -18,5 +18,13 @@ export default defineNuxtConfig({
         }
       }
     },
+  
+  app: {
+    baseURL: '/n11n-portfolio/',
+    buildAssetsDir: 'assets',
+  },
+
+  dir: {
+    public: 'public'
   },
 })

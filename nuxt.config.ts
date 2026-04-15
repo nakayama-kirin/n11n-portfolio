@@ -4,9 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
   components: true,
-  css: [
-    '~/assets/styles/reset.css',
-  ],
+  css: ['~/assets/styles/reset.css'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -14,18 +12,16 @@ export default defineNuxtConfig({
           additionalData: `
             @use "sass:map";
             @use "~/assets/styles/import.scss" as *;
-          `
-        }
-      }
+          `,
+        },
+      },
     },
   },
-  
   app: {
     baseURL: '/n11n-portfolio/',
     buildAssetsDir: 'assets',
   },
-
   dir: {
-    public: 'public'
+    public: 'public',
   },
-})
+});

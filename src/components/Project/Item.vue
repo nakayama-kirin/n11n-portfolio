@@ -29,7 +29,7 @@
       </div>
       <div v-if="project.image?.length" class="project-image">
         <img 
-          :src="project.image[0].src" 
+          :src="resolvedImageSrc" 
           :alt="project.title" 
           loading="lazy"
           @error="(e) => console.error('Image load error:', (e.target as HTMLImageElement).src)"
@@ -40,11 +40,22 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Project } from './projectProps'
 
-defineProps<{
+const props = defineProps<{
   project: Project
 }>()
+
+const runtimeConfig = useRuntimeConfig()
+
+const resolvedImageSrc = computed(() => {
+  const src = props.project.image?.[0]?.src
+  if (!src) return ''
+  if (src.startsWith('http') || src.startsWith('//')) return src
+  // baseURLを結合。srcの先頭のスラッシュを考慮して調整
+  return `${runtimeConfig.app.baseURL}${src.replace(/^\//, '')}`
+})
 
 const formatDate = (dateStr: string) => {
   if (!dateStr) return ''

@@ -7,6 +7,10 @@
 <script setup lang="ts">
 // Vuetify layout provider
 useHead({
+  title: 'Nakayama Kirin | Portfolio',
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' }
+  ],
   link: [
     { rel: 'preconnect', href: '//fonts.googleapis.com' },
     { rel: 'preconnect', href: '//fonts.gstatic.com', crossorigin: '' },

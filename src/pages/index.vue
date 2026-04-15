@@ -1,6 +1,9 @@
 <template>
   <Main>
     <Hero />
+    <Inner>
+      <ProjectList />
+    </Inner>
   </Main>
 
   <Footer />

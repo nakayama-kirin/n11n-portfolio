@@ -1,0 +1,159 @@
+{
+  "list": [
+    {
+      "date": {
+        "start": "2025-02",
+        "end": "2026-01"
+      },
+      "title": "Monotype株式会社",
+      "role": "業務委託",
+      "description": "フロントエンドエンジニアとして、デジタルフォント提供サービスサイトの運用・新規コンポーネント開発を担当。",
+      "skills": ["Vue.js", "TypeScript", "React", "Next.js", "PHP", "WordPress", "Figma"],
+      "image": [
+        {
+          "src": "/images/project_monotype01.jpg"
+        }
+      ],
+      "site": [
+        {
+          "url":"//fontworks.co.jp/",
+          "label": "Monotype株式会社 サービスサイト"
+        },
+        {
+          "url":"//lets.fontworks.co.jp/",
+          "label": "LETS"
+        },
+        {
+          "url":"//fontplus.jp/",
+          "label": "FONTPLUS"
+        },
+        {
+          "url":"//mojimo.jp/",
+          "label": "mojimo"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2023-12",
+        "end": "2024-09"
+      },
+      "title": "人材紹介サービスサイト",
+      "role": "フリーランス",
+      "description": "フロントエンドエンジニアとして、設計・開発を担当。",
+      "skills": ["Vue.js", "Nuxt.js", "AntDesign", "TypeScript", "Figma"],
+      "image": [
+        {
+          "src": "/images/project_202312-202409.jpg"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2020-11",
+        "end": "2021-04"
+      },
+      "title": "ロースクール奨学金ちゅうぶ",
+      "role": "フリーランス",
+      "description": "フロントエンドエンジニアとして、設計・開発を担当。",
+      "skills": ["PHP", "HTML5", "Sass", "jQuery", "Sketch"],
+      "image": [
+        {
+          "src": "/images/project_lawsschubu.jpg"
+        }
+      ],
+      "site": [
+        {
+          "url":"//lawsschubu.jp/",
+          "label": "ロースクール奨学金ちゅうぶ"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2019-11",
+        "end": "2021-04"
+      },
+      "title": "自社プロダクト開発企業",
+      "role": "時短正社員",
+      "description": "フロントエンドエンジニアとして、設計・実装・システム開発を担当。",
+      "skills": ["Vue.js", "HTML5", "Sass", "TypeScript", "JavaScript", "microCMS", "Adobe XD"],
+      "image": [
+        {
+          "src": "/images/project_no-image.jpg"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2017-01",
+        "end": "2017-04"
+      },
+      "title": "BtoC向けWebサイト ブログ機能制作",
+      "role": "正社員",
+      "description": "フロントエンドエンジニアとして、設計・実装・システム設計を担当。",
+      "skills": ["HTML5", "CSS3", "jQuery", "Movable Type", "Photoshop"],
+      "image": [
+        {
+          "src": "/images/project_rootsea01.jpg"
+        }
+      ],
+      "site": [
+        {
+          "url":"//treeoflife.co.jp/library/",
+          "label": "生活の木ライブラリー"
+        },
+        {
+          "url":"//www.root-sea.co.jp/blog/achieve/treeoflife/",
+          "label": "制作実績紹介"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2017-02",
+        "end": "2017-03"
+      },
+      "title": "結婚式・パーティ会場Webサイト制作",
+      "role": "正社員",
+      "description": "フロントエンドエンジニアとして、設計・実装を担当。",
+      "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],
+      "image": [
+        {
+          "src": "/images/project_rootsea02.jpg"
+        }
+      ],
+      "site": [
+        {
+          "url":"//web.archive.org/web/20180805194459/https://le-chic-unjour.com/",
+          "label": "Le Chic unjour / Webアーカイブ"
+        },
+        {
+          "url":"//www.root-sea.co.jp/blog/achieve/le-chic-unjour/",
+          "label": "制作実績紹介"
+        }
+      ]
+    },
+    {
+      "date": {
+        "start": "2016-10",
+        "end": "2016-12"
+      },
+      "title": "社外向け自社ブログWebサイト制作",
+      "role": "正社員",
+      "description": "フロントエンドエンジニアとして、設計・実装を担当。",
+      "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],
+      "image": [
+        {
+          "src": "/images/project_rootsea03.jpg"
+        }
+      ],
+      "site": [
+        {
+          "url":"//www.root-sea.co.jp/blog/",
+          "label": "Root-sea Plus"
+        }
+      ]
+    }
+  ]
+}

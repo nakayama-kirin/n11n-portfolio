@@ -11,25 +11,52 @@
       "skills": ["Vue.js", "TypeScript", "React", "Next.js", "PHP", "WordPress", "Figma"],
       "image": [
         {
-          "src": "/images/project_monotype01.jpg"
+          "src": "/images/project_monotype01-1.jpg",
+          "caption": "Monotype株式会社<wbr>サービス紹介サイト",
+          "orientation": "landscape",
+          "group": "MonotypeKK_Services01"
+        },
+        {
+          "src": "/images/project_monotype01-2.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "MonotypeKK_Services01"
+        },
+        {
+          "src": "/images/project_monotype02.jpg",
+          "caption": "LETS<wbr>Webサイト",
+          "orientation": "portrait",
+          "group": "MonotypeKK_Services02"
+        },
+        {
+          "src": "/images/project_monotype03.jpg",
+          "caption": "FONTPLUS<wbr>Webサイト",
+          "orientation": "portrait",
+          "group": "MonotypeKK_Services02"
+        },
+        {
+          "src": "/images/project_monotype04.jpg",
+          "caption": "mojimo<wbr>Webサイト",
+          "orientation": "portrait",
+          "group": "MonotypeKK_Services02"
         }
       ],
       "site": [
         {
           "url":"//fontworks.co.jp/",
-          "label": "Monotype株式会社 サービスサイト"
+          "label": "Monotype株式会社 サービス紹介サイト"
         },
         {
           "url":"//lets.fontworks.co.jp/",
-          "label": "LETS"
+          "label": "LETS Webサイト"
         },
         {
           "url":"//fontplus.jp/",
-          "label": "FONTPLUS"
+          "label": "FONTPLUS Webサイト"
         },
         {
           "url":"//mojimo.jp/",
-          "label": "mojimo"
+          "label": "mojimo Webサイト"
         }
       ]
     },
@@ -44,7 +71,22 @@
       "skills": ["Vue.js", "Nuxt.js", "AntDesign", "TypeScript", "Figma"],
       "image": [
         {
-          "src": "/images/project_202312-202409.jpg"
+          "src": "/images/project_service202312-202409_01.jpg",
+          "caption": "面接官向け画面",
+          "orientation": "landscape",
+          "group": "service202312-202409_Services"
+        },
+        {
+          "src": "/images/project_service202312-202409_02.jpg",
+          "caption": "店舗向け画面",
+          "orientation": "portrait",
+          "group": "service202312-202409_Services"
+        },
+        {
+          "src": "/images/project_service202312-202409_03.jpg",
+          "caption": "LP",
+          "orientation": "portrait",
+          "group": "service202312-202409_Services"
         }
       ]
     },
@@ -59,7 +101,16 @@
       "skills": ["PHP", "HTML5", "Sass", "jQuery", "Sketch"],
       "image": [
         {
-          "src": "/images/project_lawsschubu.jpg"
+          "src": "/images/project_lawsschubu01.jpg",
+          "caption": "PC画面",
+          "orientation": "landscape",
+          "group": "lawsschubu_Services"
+        },
+        {
+          "src": "/images/project_lawsschubu02.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "lawsschubu_Services"
         }
       ],
       "site": [
@@ -78,11 +129,7 @@
       "role": "時短正社員",
       "description": "フロントエンドエンジニアとして、設計・実装・システム開発を担当。",
       "skills": ["Vue.js", "HTML5", "Sass", "TypeScript", "JavaScript", "microCMS", "Adobe XD"],
-      "image": [
-        {
-          "src": "/images/project_no-image.jpg"
-        }
-      ]
+      "image": []
     },
     {
       "date": {
@@ -95,7 +142,16 @@
       "skills": ["HTML5", "CSS3", "jQuery", "Movable Type", "Photoshop"],
       "image": [
         {
-          "src": "/images/project_rootsea01.jpg"
+          "src": "/images/project_rootsea01-1.jpg",
+          "caption": "PC画面",
+          "orientation": "landscape",
+          "group": "rootsea01_Services"
+        },
+        {
+          "src": "/images/project_rootsea01-2.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "rootsea01_Services"
         }
       ],
       "site": [
@@ -120,7 +176,16 @@
       "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],
       "image": [
         {
-          "src": "/images/project_rootsea02.jpg"
+          "src": "/images/project_rootsea02-1.jpg",
+          "caption": "PC画面",
+          "orientation": "landscape",
+          "group": "rootsea02_Services"
+        },
+        {
+          "src": "/images/project_rootsea02-2.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "rootsea02_Services"
         }
       ],
       "site": [
@@ -145,7 +210,16 @@
       "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],
       "image": [
         {
-          "src": "/images/project_rootsea03.jpg"
+          "src": "/images/project_rootsea03-1.jpg",
+          "caption": "PC画面",
+          "orientation": "landscape",
+          "group": "rootsea03_Services"
+        },
+        {
+          "src": "/images/project_rootsea03-2.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "rootsea03_Services"
         }
       ],
       "site": [

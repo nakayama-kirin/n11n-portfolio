@@ -7,6 +7,11 @@ export interface Project {
   role: string
   description: string
   skills: string[]
-  image: { src: string }[]
+  image?: {
+    src: string
+    caption: string
+    group?: string
+    orientation?: 'landscape' | 'portrait'
+  }[]
   site?: { url: string; label: string }[]
 }

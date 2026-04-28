@@ -28,8 +28,36 @@
         </ul>
       </div>
       <div v-if="project.image?.length" class="project-image">
+        <template v-for="(entry, index) in groupedImages" :key="index">
+          <div v-if="entry.isGroup" class="project-image-group">
+            <figure
+              v-for="(img, iIndex) in entry.items"
+              :key="iIndex"
+              :class="getImageFigureClass(img)"
+            >
+              <img 
+                :src="resolveImageUrl(img.src)" 
+                alt=""
+                loading="lazy"
+                @error="(e) => console.error('Image load error:', (e.target as HTMLImageElement).src)"
+              />
+              <figcaption class="font-google-sans-code" v-html="img.caption"></figcaption>
+            </figure>
+          </div>
+          <figure v-else :class="getImageFigureClass(entry)">
+            <img 
+              :src="resolveImageUrl(entry.src)" 
+              alt=""
+              loading="lazy"
+              @error="(e) => console.error('Image load error:', (e.target as HTMLImageElement).src)"
+            />
+            <figcaption class="font-google-sans-code" v-html="entry.caption"></figcaption>
+          </figure>
+        </template>
+      </div>
+      <div v-else class="project-image">
         <img 
-          :src="resolvedImageSrc" 
+          :src="resolveImageUrl(`/images/project_no-image.jpg`)" 
           :alt="project.title" 
           loading="lazy"
           @error="(e) => console.error('Image load error:', (e.target as HTMLImageElement).src)"
@@ -47,14 +75,39 @@ const props = defineProps<{
   project: Project
 }>()
 
+const groupedImages = computed(() => {
+  const images = props.project.image || []
+  const groups: any[] = []
+  const groupMap = new Map<string, any>()
+
+  images.forEach((img) => {
+    if (img.group) {
+      if (groupMap.has(img.group)) {
+        groupMap.get(img.group).items.push(img)
+      } else {
+        const newGroup = { isGroup: true, groupName: img.group, items: [img] }
+        groups.push(newGroup)
+        groupMap.set(img.group, newGroup)
+      }
+    } else {
+      groups.push({ isGroup: false, ...img })
+    }
+  })
+  
+  return groups
+})
+
 const runtimeConfig = useRuntimeConfig()
 
-const resolvedImageSrc = computed(() => {
-  const src = props.project.image?.[0]?.src
+const resolveImageUrl = (src: string) => {
   if (!src) return ''
   if (src.startsWith('http') || src.startsWith('//')) return src
-  // baseURLを結合。srcの先頭のスラッシュを考慮して調整
   return `${runtimeConfig.app.baseURL}${src.replace(/^\//, '')}`
+}
+
+const getImageFigureClass = (image: { orientation?: 'landscape' | 'portrait' }) => ({
+  'is-landscape': image.orientation !== 'portrait',
+  'is-portrait': image.orientation === 'portrait',
 })
 
 const formatDate = (dateStr: string) => {
@@ -201,15 +254,61 @@ const formatDate = (dateStr: string) => {
   &-image {
     order: -1;
     grid-area: image;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
     @include media(l) {
       order: unset;
       align-self: start;
     }
 
+    &-group {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      align-items: stretch;
+      flex: 0 0 100%;
+    }
+
+    figure {
+      --figure-ratio: 1;
+
+      flex: var(--figure-ratio) 1 0;
+      position: relative;
+      margin: 0;
+      min-width: 0;
+      max-height: fit-content;
+      scroll-snap-align: start;
+
+      &.is-landscape {
+        --figure-ratio: 1164 / 750;
+        aspect-ratio: 1164 / 750;
+      }
+
+      &.is-portrait {
+        --figure-ratio: 375 / 750;
+        aspect-ratio: 375 / 750;
+      }
+    }
+
+    figcaption {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+      padding: 6px 8px;
+      line-height: 1;
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: rgba(#000, 0.9);
+      white-space: nowrap;
+    }
+
     img {
-      max-width: 100%;
-      border-radius: 8px;
+      display: block;
+      width: 100%;
+      height: auto;
     }
   }
 }

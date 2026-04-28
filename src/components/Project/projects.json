@@ -65,7 +65,7 @@
         "start": "2023-12",
         "end": "2024-09"
       },
-      "title": "人材紹介サービスサイト",
+      "title": "人材紹介<wbr>サービスサイト",
       "role": "フリーランス",
       "description": "フロントエンドエンジニアとして、設計・開発を担当。",
       "skills": ["Vue.js", "Nuxt.js", "AntDesign", "TypeScript", "Figma"],
@@ -95,7 +95,7 @@
         "start": "2020-11",
         "end": "2021-04"
       },
-      "title": "ロースクール奨学金ちゅうぶ",
+      "title": "ロースクール奨学金<wbr>ちゅうぶ",
       "role": "フリーランス",
       "description": "フロントエンドエンジニアとして、設計・開発を担当。",
       "skills": ["PHP", "HTML5", "Sass", "jQuery", "Sketch"],
@@ -125,7 +125,7 @@
         "start": "2019-11",
         "end": "2021-04"
       },
-      "title": "自社プロダクト開発企業",
+      "title": "自社プロダクト<wbr>開発企業",
       "role": "時短正社員",
       "description": "フロントエンドエンジニアとして、設計・実装・システム開発を担当。",
       "skills": ["Vue.js", "HTML5", "Sass", "TypeScript", "JavaScript", "microCMS", "Adobe XD"],
@@ -136,7 +136,7 @@
         "start": "2017-01",
         "end": "2017-04"
       },
-      "title": "BtoC向けWebサイト ブログ機能制作",
+      "title": "BtoC向けWebサイト<wbr>ブログ機能制作",
       "role": "正社員",
       "description": "フロントエンドエンジニアとして、設計・実装・システム設計を担当。",
       "skills": ["HTML5", "CSS3", "jQuery", "Movable Type", "Photoshop"],
@@ -170,7 +170,7 @@
         "start": "2017-02",
         "end": "2017-03"
       },
-      "title": "結婚式・パーティ会場Webサイト制作",
+      "title": "結婚式・パーティ会場<wbr>Webサイト制作",
       "role": "正社員",
       "description": "フロントエンドエンジニアとして、設計・実装を担当。",
       "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],
@@ -204,7 +204,7 @@
         "start": "2016-10",
         "end": "2016-12"
       },
-      "title": "社外向け自社ブログWebサイト制作",
+      "title": "社外向け自社ブログ<wbr>Webサイト制作",
       "role": "正社員",
       "description": "フロントエンドエンジニアとして、設計・実装を担当。",
       "skills": ["HTML5", "Sass", "jQuery", "WordPress", "Photoshop"],

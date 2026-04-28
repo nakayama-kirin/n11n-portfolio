@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <section>
-      <h3 class="project-title">{{ project.title }}</h3>
+      <h3 class="project-title" v-html="project.title"></h3>
       <p class="project-role">{{ project.role }}</p>
       <dl class="project-date">
         <dt>時期</dt>
@@ -156,12 +156,14 @@ const formatDate = (dateStr: string) => {
     order: -1;
     grid-area: title;
     font-size: 2.4rem;
+    white-space: nowrap;
   }
 
   &-role {
     grid-area: role;
     align-self: center;
     padding-top: 0.25em;
+    white-space: nowrap;
   }
 
   &-date {
@@ -254,41 +256,85 @@ const formatDate = (dateStr: string) => {
   &-image {
     order: -1;
     grid-area: image;
+    box-sizing: content-box;
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
     gap: 10px;
+    height: calc( calc(100vw - map.get($padding, sp) * 2) * ((750 + 10) / (1164 + 10 + 375)));
+    min-height: 250px;
+
+    @include media(m) {
+      height: calc( calc(100vw - map.get($padding, tb) * 2) * ((750 + 10) / (1164 + 10 + 375)));
+    }
+    
+    @include media(sm) {
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
 
     @include media(l) {
+      box-sizing: border-box;
+      overflow: hidden;
       order: unset;
+      flex-wrap: wrap;
       align-self: start;
+      height: auto;
+      min-height: unset;
     }
 
     &-group {
+      flex: 0 0 auto;
       display: flex;
       gap: 10px;
-      width: 100%;
-      align-items: stretch;
-      flex: 0 0 100%;
+      height: 100%;
+      
+      @include media(l) {
+        flex: 0 0 100%;
+        align-items: stretch;
+        width: 100%;
+        height: auto;
+      }
     }
 
     figure {
-      --figure-ratio: 1;
-
-      flex: var(--figure-ratio) 1 0;
+      flex: 0 0 auto;
       position: relative;
-      margin: 0;
-      min-width: 0;
-      max-height: fit-content;
-      scroll-snap-align: start;
+      height: inherit;
 
-      &.is-landscape {
-        --figure-ratio: 1164 / 750;
-        aspect-ratio: 1164 / 750;
-      }
+      @include media(l) {
+        --figure-ratio: 1;
 
-      &.is-portrait {
-        --figure-ratio: 375 / 750;
-        aspect-ratio: 375 / 750;
+        flex: var(--figure-ratio) 1 0;
+        margin: 0;
+        min-width: 0;
+        max-height: fit-content;
+        scroll-snap-align: start;
+
+        &.is-landscape {
+          --figure-ratio: 1164 / 750;
+          aspect-ratio: 1164 / 750;
+        }
+
+        &.is-portrait {
+          --figure-ratio: 375 / 750;
+          aspect-ratio: 375 / 750;
+        }
       }
     }
 
@@ -307,8 +353,12 @@ const formatDate = (dateStr: string) => {
 
     img {
       display: block;
-      width: 100%;
-      height: auto;
+      height: 100%;
+
+      @include media(l) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

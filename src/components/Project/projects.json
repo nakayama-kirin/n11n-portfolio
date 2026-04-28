@@ -92,6 +92,36 @@
     },
     {
       "date": {
+        "start": "2022-12",
+        "end": "2023-03"
+      },
+      "title": "キャンペーンLP制作",
+      "role": "フリーランス",
+      "description": "フロントエンドエンジニアとして、設計・開発を担当。",
+      "skills": ["Vue.js", "HTML5", "Sass", "Figma"],
+      "image": [
+        {
+          "src": "/images/project_soundmain01.jpg",
+          "caption": "PC画面",
+          "orientation": "landscape",
+          "group": "soundmain_Services"
+        },
+        {
+          "src": "/images/project_soundmain02.jpg",
+          "caption": "SP画面",
+          "orientation": "portrait",
+          "group": "soundmain_Services"
+        }
+      ],
+      "site": [
+        {
+          "url":"//web.archive.org/web/20230329042004/https://soundmain.net/lp202303/",
+          "label": "Soundmain LP / Webアーカイブ"
+        }
+      ]
+    },
+    {
+      "date": {
         "start": "2020-11",
         "end": "2021-04"
       },
